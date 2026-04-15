@@ -113,7 +113,7 @@ def load_model_and_tokenizer():
 
     if use_cuda:
         allocated = torch.cuda.memory_allocated() / 1024**3
-        total = torch.cuda.get_device_properties(0).total_mem / 1024**3
+        total = torch.cuda.get_device_properties(0).total_memory / 1024**3
         print(f"VRAM: {allocated:.2f}GB allocated / {total:.1f}GB total")
 
     return model, tokenizer

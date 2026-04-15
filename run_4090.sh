@@ -26,7 +26,7 @@ echo "============================================================"
 # Step 0: 检查GPU
 echo ""
 echo "--- Step 0: 环境检查 ---"
-python -c "import torch; print(f'PyTorch: {torch.__version__}'); print(f'CUDA: {torch.cuda.is_available()}'); [print(f'GPU {i}: {torch.cuda.get_device_name(i)}, {torch.cuda.get_device_properties(i).total_mem/1024**3:.1f}GB') for i in range(torch.cuda.device_count())] if torch.cuda.is_available() else print('No GPU!')"
+python -c "import torch; print(f'PyTorch: {torch.__version__}'); print(f'CUDA: {torch.cuda.is_available()}'); [print(f'GPU {i}: {torch.cuda.get_device_name(i)}, {torch.cuda.get_device_properties(i).total_memory/1024**3:.1f}GB') for i in range(torch.cuda.device_count())] if torch.cuda.is_available() else print('No GPU!')"
 
 if ! python -c "import torch; assert torch.cuda.is_available()" 2>/dev/null; then
     echo "ERROR: No GPU detected!"

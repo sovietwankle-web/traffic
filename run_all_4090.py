@@ -50,7 +50,7 @@ def check_gpu():
         log(f"CUDA version: {torch.version.cuda}")
         for i in range(torch.cuda.device_count()):
             props = torch.cuda.get_device_properties(i)
-            log(f"GPU {i}: {props.name}, {props.total_mem/1024**3:.1f}GB VRAM")
+            log(f"GPU {i}: {props.name}, {props.total_memory/1024**3:.1f}GB VRAM")
         return True
     else:
         log("WARNING: No GPU detected! Training will be very slow on CPU.")
